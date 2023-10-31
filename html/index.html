@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>home</title>
+
+  <link rel="icon" type="image/x-icon" href="../Img/sobuzlogo.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <!--for main css-->
+  <link rel="stylesheet" href="../css/main.css">
+  <!--for footer css-->
+  <link rel="stylesheet" href="../css/footer.css">
+  <!--for notice css-->
+  <link rel="stylesheet" href="../css/notice.css">
+
+
+  <style>
+    /* Reset some default styles */
+
+    #info{
+    margin: 0;
+    border-radius: 9px;
+    background: #a2d5c6;
+    box-shadow: inset 5px 5px 10px #85afa2,
+    inset -5px -5px 10px #bffbea;
+    padding: 0px 5px 10px 5px;
+    }
+
+    #map{
+    border: 1px solid black;
+    border-radius: 3px;
+
+    }
+
+    #location-details {
+    background-color: #a2d5c6;
+    border-bottom: 1px solid blue;
+    text-align: center;
+    padding: 5px 0px 0px 0px;
+    }
+
+    #map-container {
+    width: 100%;
+    display: none;
+    /* Initially hide the map */
+    }
+
+    button#view-location {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    }
+
+
+    .hidden{
+    padding: 0px 3px 5px 3px;
+
+    }
+
+    button#view-location:hover {
+    background-color: #0056b3;
+    }
+  </style>
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+
+
+
+  <header>
+    <div class="nav__container">
+      <div class="nav__mobile">
+        <div class="nav__logo">
+        <a href=""><img src="../Img/sobuzlogo.png" alt="sobuzlogo"></a>
+        </div>
+        <div class="nav__btn">
+          <a aria-label="Mobile menu" class="nav-toggle fade">
+
+            <span></span>
+            <span class="mrg"></span><span class="mrg"></span></a>
+        </div>
+      </div>
+      <nav class="menu-toggle">
+        <ul class="nav__menu">
+          <li><a href="">HOME</a></li>
+
+          <li class="dropdown"><a href="#">PRODUCT</a>
+            <ul>
+              <li class="dropdown second-level"><a href="#">FOODS</a>
+                <ul>
+                  <li><a href="">ICE CREAM</a></li>
+                  <li><a href="">SOFT DRINK</a></li>
+                  <li><a href="">COOKIES</a></li>
+                  <li><a href="">SNACKS</a></li>
+                </ul>
+              </li>
+              <li class="dropdown third -level"><a href="#">ELECTRONICS</a>
+                <ul>
+                  <li><a href="">MOBILE CHARGER</a></li>
+                  <li><a href="">EARPHONES</a></li>
+                  <li><a href="">BATTERIES</a></li>
+                  <li><a href="">LIGHT</a></li>
+                </ul>
+              </li>
+              <li><a href="">TELECOM</a></li>
+              <li><a href="">MOBILE BANKING</a></li>
+            </ul>
+          </li>
+          <li><a href="html/about.html">ABOUT US</a></li>
+          <li><a href="">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- notice start-->
+  <div class="news-container">
+    <div class="title">
+      নোটিশ
+    </div>
+
+    <ul>
+      <li>
+        বাকি বিক্রয় করা হয় না।
+      </li>
+
+      <li>
+        &#2547-টাকা ধার দেওয়া হয় না।
+      </li>
+
+      <li>
+        বাকি চাইয়া লজ্জা দিবেন না।
+      </li>
+    </ul>
+  </div>
+  <!--  notic end -->
+
+
+
+  <!-- img-slider start -->
+  <div class="pic">
+    <div id="slider-container">
+      <div id="slider">
+
+        <div class="slide">
+          <img src="../Img/hero.jpg" alt="Image 1">
+        </div>
+
+        <div class="slide">
+          <img src="../Img/1.jpeg" alt="Image 1">
+        </div>
+
+        <div class="slide">
+          <img
+          src="../Img/2.jpeg"
+          alt="Image 2">
+        </div>
+
+        <div class="slide">
+          <img
+          src="../Img/3.jpg"
+          alt="Image 3">
+        </div>
+        <!-- Add more images here -->
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="radio-buttons">
+      <label for="radio1" class="radio-label">
+        <input type="radio" class="radio-button" name="slider-radio" id="radio1" checked>
+        <span class="radio-custom"></span>
+      </label>
+
+      <label for="radio2" class="radio-label">
+        <input type="radio" class="radio-button" name="slider-radio" id="radio2">
+        <span class="radio-custom"></span>
+      </label>
+      <label for="radio3" class="radio-label">
+        <input type="radio" class="radio-button" name="slider-radio" id="radio3">
+        <span class="radio-custom"></span>
+      </label>
+      <label for="radio4" class="radio-label">
+        <input type="radio" class="radio-button" name="slider-radio" id="radio4">
+        <span class="radio-custom"></span>
+      </label>
+      <!-- Add more radio buttons corresponding to the images -->
+    </div>
+  </div>
+
+  <!-- img slider end -->
+
+
+
+
+
+
+
+
+  <!-- location start -->
+  <div id="location-details">
+    <!-- Location details here -->
+    <div id="info">
+      <h1>আমাদের ঠিকনা </h1>
+
+      <p>
+        মাছখোলা বাজার, সাতক্ষীরা সদর।
+      </p>
+    </div>
+
+    <button id="view-location">
+      গুগল ম্যাপে আমাদের ঠিকানা দেখুন</button>
+    <div id="map-container" class="hidden">
+      <!-- Google Map iframe will be displayed here -->
+      <iframe id="map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8726.739349094227!2d89.10997837780673!3d22.710766779393637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ff61cbdfa2bb3f%3A0xcbfef6e5412dba75!2sSobuz%20Telecom%20%26%20Ice%20Cream!5e1!3m2!1sen!2sbd!4v1695068582666!5m2!1sen!2sbd"width="100%"
+
+        ></iframe>
+    </div>
+  </div>
+  <!-- location end -->
+
+
+
+
+
+  <!--  footer start -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="row">
+        <div class="footer-col">
+          <h4>SHOBUZ-TELECOM</h4>
+          <ul>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">our services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>get help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">payment options</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>find us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <p class="clam">
+        &#169 All Rights Reserved 2023 /sobuz telecom
+      </p>
+    </div>
+  </footer>
+  <!-- footer end -->
+
+
+
+
+
+
+  <script src="java/img-slider.js"></script>
+  <script src="java/index.js"></script>
+
+
+  <script>
+    const locationDetails = document.getElementById("location-details");
+    const viewLocationBtn = document.getElementById("view-location");
+    const mapContainer = document.getElementById("map-container");
+
+    let isMapVisible = false;
+
+    function toggleMap() {
+    if (isMapVisible) {
+    mapContainer.style.display = "none";
+    viewLocationBtn.textContent = "আবার দেখুন";
+    } else {
+    mapContainer.style.display = "block";
+    viewLocationBtn.textContent = "বন্ধ করুন";
+    }
+    isMapVisible = !isMapVisible;
+    }
+
+    viewLocationBtn.addEventListener("click", toggleMap);
+  </script>
+
+
+</body>
+</html>

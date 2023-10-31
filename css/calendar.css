@@ -1,0 +1,623 @@
+:root {
+    --dark-text: #f8fbff;
+    --light-body: #f3f8fe;
+    --light-main: #fdfdfd;
+    --light-second: #c3c2c8;
+    --light-hover: #f0f0f0;
+    --light-text: #151426;
+    --light-btn: #9796f0;
+    --blue: #0000ff;
+    --white: #fff;
+    --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --font-family: consolas;
+  }
+  .contianer {
+    width: max-content;
+    height: max-content;
+    position: relative;
+    display: flex;
+    padding: 2% 0px 0px 0px;
+    justify-content: center;
+    top: 10%;
+    right: 0%;
+    width: 100%;
+    height: 100%;
+  }
+  .calendar {
+    height: 610px;
+    width: max-content;
+    background-color: white;
+    border-radius: 25px;
+    overflow: hidden;
+    padding: 30px 50px 0px 50px;
+  }
+  .calendar {
+    box-shadow: var(--shadow);
+  }
+  .calendar-header {
+    background: #9796f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    color: var(--white);
+    padding: 10px;
+    border-radius:5px;
+  }
+  .calendar-body {
+    pad: 10px;
+  }
+  .calendar-week-days {
+    display:grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 600;
+    cursor: pointer;
+    
+    color:rgb(104, 104, 104);
+  }
+  .calendar-week-days div:hover {
+  color:black;
+  transform: scale(1.2);
+  transition: all .2s ease-in-out;
+  }
+  .calendar-week-days div {
+    display: grid;
+    place-items: center;
+    color: var(--bg-second);
+    height: 50px;
+  }
+  .calendar-days {
+    display:grid;
+    grid-template-columns:repeat(7, 1fr);
+    gap: 2px;
+    color: var(--color-txt);
+    justify-content: center;
+  }
+  .calendar-days div {
+    width: 37px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    animation: to-top 1s forwards;
+  }
+  .month-picker {
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .month-picker:hover {
+    background-color: var(--color-hover);
+  }
+  .month-picker:hover {
+    color: var(--color-txt);
+  }
+  .year-picker {
+    display: flex;
+    align-items: center;
+  }
+  .year-change {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0px 10px;
+    cursor: pointer;
+  }
+  .year-change:hover {
+    background-color: var(--light-btn);
+    transition:all .2s ease-in-out ;
+    transform: scale(1.12);
+  }
+  .year-change:hover pre {
+    color: var(--bg-body);
+  }
+  .calendar-footer {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  #year:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: all 0.2 ease-in-out;
+  }
+  .calendar-days div span {
+    position: absolute;
+  }
+   .calendar-days div:hover {
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    background-color: #fbc7d4;
+    border-radius: 20%;
+    color: var(--dark-text);
+  }
+  .calendar-days div.current-date {
+    color: var(--dark-text);
+    background-color: var(--light-btn);
+    border-radius: 20%;
+  }
+  .month-list {
+    position: relative;
+    left: 0;
+    top: -50px;
+    background-color: #ebebeb;
+    color: var(--light-text);
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 5px;
+    border-radius: 20px;
+  }
+  .month-list > div {
+    display: grid;
+    place-content: center;
+    margin: 5px 10px;
+    transition: all 0.2s ease-in-out;
+  }
+  .month-list > div > div {
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .month-list > div > div:hover {
+    background-color:var(--light-btn);
+    color: var(--dark-text);
+    transform: scale(0.9);
+    transition: all 0.2s ease-in-out;
+  }
+  .month-list.show {
+    visibility: visible;
+    pointer-events: visible;
+    transition: 0.6s ease-in-out;
+    animation: to-left .71s forwards;
+  }
+  .month-list.hideonce{
+    visibility: hidden;
+  }
+  .month-list.hide {
+    animation: to-right 1s forwards;
+    visibility: none;
+    pointer-events: none;
+  }
+  .date-time-formate {
+    width: max-content;
+    height: max-content;
+    font-family: Dubai Light, Century Gothic;
+    position: relative;
+    display: inline;
+    top: 140px;
+    justify-content: center;
+  }
+  .day-text-formate {
+    font-family: Microsoft JhengHei UI;
+    font-size: 1.4rem;
+    padding-right: 5%;
+    border-right: 3px solid #9796f0;
+    position: absolute;
+    left: -1rem;
+  }
+  .date-time-value {
+    display: block;
+    height: max-content;
+    width: max-content;
+    position: relative;
+    left: 40%;
+    top: -18px;
+    text-align: center;
+  }
+  .time-formate {
+    font-size: 1.5rem;
+  }
+  .time-formate.hideTime {
+    animation: hidetime 1.5s forwards;
+  }
+  .day-text-formate.hidetime {
+    animation: hidetime 1.5s forwards;
+  }
+  .date-formate.hideTime {
+    animation: hidetime 1.5s forwards;
+  }
+  .day-text-formate.showtime{
+    animation: showtime 1s forwards;
+  }
+  .time-formate.showtime {
+    animation: showtime 1s forwards;
+  }
+  .date-formate.showtime {
+    animation: showtime 1s forwards;
+  }
+  @keyframes to-top {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(100%);
+      opacity: 1;
+    }
+  }
+  @keyframes to-left {
+    0% {
+      transform: translatex(230%);
+      opacity: 1;
+    }
+    100% {
+      transform: translatex(0);
+      opacity: 1;
+    }
+  }
+  @keyframes to-right {
+    10% {
+      transform: translatex(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translatex(-150%);
+      opacity: 1;
+    }
+  }
+  @keyframes showtime {
+    0% {
+      transform: translatex(250%);
+      opacity: 1;
+    }
+    100% {
+      transform: translatex(0%);
+      opacity: 1;
+    }
+  }
+  @keyframes hidetime {
+    0% {
+      transform: translatex(0%);
+      opacity: 1;
+    }
+    100% {
+      transform: translatex(-370%);
+      opacity: 1;
+    }
+  }
+  @media (max-width:375px) {
+    .month-list>div{
+  
+      margin: 5px 0px;
+    }
+  }
+  
+  
+  
+  /* Existing CSS */
+
+/* Add a media query for screens smaller than or equal to 768px (tablets) */
+@media (max-width: 768px) {
+  .contianer {
+    top: 0; /* Adjust the top positioning */
+    padding: 5% 0; /* Adjust padding */
+  }
+
+  .calendar {
+    width: 100%; /* Make the calendar full width */
+    padding: 20px; /* Adjust padding */
+  }
+
+  .calendar-header {
+    font-size: 1.2rem; /* Decrease font size */
+    padding: 8px; /* Adjust padding */
+  }
+
+  .calendar-week-days div {
+    height: 40px; /* Increase the height of week day cells */
+  }
+
+.calendar-week-days {
+    
+    font-size: 0.9rem; /* Decrease font size */
+  }
+}
+  .calendar-days div {
+    width: 25px; /* Decrease the width of date cells */
+    height: 25px; /* Decrease the height of date cells */
+  }
+
+  .month-picker {
+    font-size: 1rem; /* Decrease font size */
+    padding: 3px 6px; /* Adjust padding */
+  }
+
+  .year-change {
+    height: 24px; /* Decrease the size of year change buttons */
+    width: 24px;
+    margin: 0 5px; /* Adjust margin */
+  }
+
+  .date-time-formate {
+    top: 100px; /* Adjust top positioning */
+  }
+  
+  .day-text-formate {
+    font-size: 1.2rem; /* Decrease font size */
+    padding-right: 2%; /* Adjust padding */
+  }
+  
+  .date-time-value {
+    left: 30%; /* Adjust left positioning */
+  }
+
+  .time-formate,
+  .time-formate.hideTime,
+  .day-text-formate.hidetime,
+  .date-formate.hideTime,
+  .day-text-formate.showtime,
+  .time-formate.showtime,
+  .date-formate.showtime {
+    font-size: 1.2rem; /* Decrease font size */
+  }
+}
+
+/* Add a media query for screens smaller than or equal to 375px (mobile phones) */
+@media (max-width: 375px) {
+  .month-list>div {
+    margin: 5px 0; /* Remove horizontal margin */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.clock-container {
+
+  position: fixed;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #111;
+  box-shadow: 0 0 25px 3px #000, 0 0 10px rgba(0, 0, 0, 0.8) inset;
+}
+.clock-container .spear {
+  position: absolute;
+  width: 220px;
+  height: 1px;
+  background: red;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 200;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+}
+.clock-container .spear:after {
+  content: "";
+  position: absolute;
+  border: 7px solid transparent;
+  border-right-color: red;
+  right: 0;
+  top: -7px;
+}
+.clock-container .spear:before {
+  content: "";
+  position: absolute;
+  border: 7px solid transparent;
+  border-left-color: red;
+  left: 2px;
+  top: -7px;
+}
+.clock-container .clock-analog {
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  margin: 20px;
+  background: #fff;
+  z-index: 5;
+  position: relative;
+  box-shadow: 0 0 25px 3px #000 inset;
+}
+.clock-container .clock-analog .second,
+.clock-container .clock-analog .minute,
+.clock-container .clock-analog .hour {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 100;
+  transition: 0.2s 0.2s ease-in;
+  transform: rotate(90deg);
+}
+.clock-container .clock-analog .second span,
+.clock-container .clock-analog .minute span,
+.clock-container .clock-analog .hour span {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  transform-origin: 50%;
+  z-index: 5;
+}
+.clock-container .clock-analog .second span:after,
+.clock-container .clock-analog .minute span:after,
+.clock-container .clock-analog .hour span:after {
+  content: "";
+  width: 4px;
+  height: 1px;
+  background: #000;
+  position: absolute;
+  left: 130%;
+  top: -10%;
+  opacity: 0.3;
+}
+.clock-container .clock-analog .second span:nth-child(5n + 2):after,
+.clock-container .clock-analog .minute span:nth-child(5n + 2):after,
+.clock-container .clock-analog .hour span:nth-child(5n + 2):after {
+  width: 7px;
+  opacity: 1;
+  left: 110%;
+}
+.clock-container .clock-analog .hour {
+  z-index: 150;
+  font-size: 32px;
+  font-weight: 400;
+}
+.clock-container .clock-analog .hour span:after {
+  opacity: 1;
+  width: 4px;
+  height: 1px;
+  color: #666;
+  transform: translate(5px, 12px);
+}
+.clock-container .clock-analog .hour:after {
+  content: "";
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.6) inset;
+}
+.clock-container .clock-analog .minute {
+  color: #fff;
+  font-size: 16px;
+}
+.clock-container .clock-analog .minute span:after {
+  background: #fff;
+  transform: translate(10px, -7px) rotate(-9deg);
+}
+.clock-container .clock-analog .minute:after {
+  content: "";
+  background: #333;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  box-shadow: 0 0 25px 2px #000 inset;
+}
+.clock-container .clock-analog .second {
+  font-size: 12px;
+}
+.clock-container .clock-analog .second span:after {
+  transform: translate(5px, -10px);
+}
+.clock-container .clock-analog .dail {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 100;
+}
+.clock-container .clock-analog .dail span {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  transform-origin: 50%;
+  text-indent: 1000px;
+  overflow: hidden;
+  position: absolute;
+}
+.clock-container .clock-analog .dail span:after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #7d7e7d;
+  zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#FF7D7E7D', endColorstr='#FF0E0E0E');
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzdkN2U3ZCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzBlMGUwZSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==");
+  background-size: 100%;
+  background-image: linear-gradient(to right, #7d7e7d 0%, #0e0e0e 100%);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.clock-container .clock-analog .dail span:nth-child(5n + 1):after {
+  width: 8px;
+}
+.clock-container .clock-digital {
+  position: absolute;
+  z-index: 200;
+  height: 444px;
+  width: 224px;
+  background: #090909;
+  left: 18px;
+  top: 18px;
+  border-radius: 220px 0 0 220px;
+  box-shadow: 5px 0 15px #000;
+}
+.clock-container .clock-digital:after {
+  content: "";
+  position: absolute;
+  border: 15px solid #8e0a0a;
+  border-right: none;
+  height: 400px;
+  width: 200px;
+  border-radius: 220px 0 0 220px;
+  left: 25px;
+  top: 25px;
+}
+.clock-container .clock-digital .time {
+  background: #111;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  border-radius: 50px;
+  font-size: 24px;
+  padding: 2px 20px;
+  box-shadow: 0 0 15px #000 inset;
+}
+.clock-container .clock-digital .day {
+  background: #111;
+  position: absolute;
+  right: 20px;
+  bottom: 100px;
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 15px #000 inset;
+  padding: 2px 20px;
+  font-size: 16px;
+}
+.clock-container .clock-digital .date {
+  background: #111;
+  position: absolute;
+  right: 20px;
+  top: 100px;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 16px;
+  box-shadow: 0 0 10px #000 inset;
+  padding: 2px 20px;
+}
+
